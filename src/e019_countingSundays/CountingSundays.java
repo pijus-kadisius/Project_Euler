@@ -48,6 +48,8 @@ public class CountingSundays {
 
 			}
 		}
+		
+		System.out.println(sundaysGauss);
 
 	}
 

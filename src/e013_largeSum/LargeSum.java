@@ -25,7 +25,7 @@ public class LargeSum {
 		BigInteger sum = new BigInteger("0");
 		String out="";
 		
-		reader = new BufferedReader(new FileReader("/home/pk/git_workspace/ProjectEuler/src/e013_largeSum/largeNumber.txt"));
+		reader = new BufferedReader(new FileReader("/home/pk/git/Project_Euler/src/e013_largeSum/largeNumber.txt"));
 		
 		int i = 0;
 		while((in = reader.readLine())!=null)

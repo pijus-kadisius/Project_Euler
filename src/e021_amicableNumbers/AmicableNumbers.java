@@ -68,7 +68,7 @@ public class AmicableNumbers {
 		String out = "";
 		out = out + "Amicable pairs of numbers under 10000:\n\n";
 
-		Iterator i = amicPairs.iterator();
+		Iterator<Integer> i = amicPairs.iterator();
 
 		while (i.hasNext() == true) {
 			out = out + "[" + i.next() + " " + i.next() + "]\n";

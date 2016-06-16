@@ -13,19 +13,52 @@ package e024_lexicographicPermutations;
 import java.util.Arrays;
 
 public class LexicographicPermutations {
-	static int[] elements = {0,1,2,3,4,5,6,7,8,9};
-	public static void main(String[] args) {
-
-		/*
-		 * ALGO:
-		 */
-		
-		
-		//get size of array
-		int size = elements.length;
-		
-		
 	
-	}
+	public static void main(String[] args) {
+	
+		int[] elements = {0,1,2,3,4,5,6,7,8,9};
+		int[] millionthPermutation = new int[10];
 		
+		for(int i = 1; i<1000000; i++) {
+				millionthPermutation = nextLexicographicPermutation(elements);
+		}
+		
+		for(int a : millionthPermutation)		
+			System.out.print(a+" ");
+		System.out.println();
+		
+	}
+	
+	static int[] nextLexicographicPermutation(int[] elements) {
+			int i = elements.length-1;
+			int j = elements.length-1;
+			int temp = 0;
+			
+			//Find largest index i such that array[i − 1] < array[i].
+			while(i>0 && elements[i-1]>=elements[i])
+				i--;
+			
+			if(i <= 0 )
+				return null;
+				
+			//Find largest index j such that j ≥ i and array[j] > array[i − 1]
+			while(elements[j]<=elements[i-1]) 
+				j--;
+			
+			//Swap array[j] and array[i − 1]
+			temp = elements[j];
+			elements[j] = elements[i-1];
+			elements[i-1] = temp;
+			
+			//Reverse the suffix starting at array[i]
+			j=elements.length-1;
+			while(i<j) {
+				temp = elements[i];
+				elements[i]=elements[j];
+				elements[j]=temp;
+				i++;
+				j--;
+			}
+		return elements;
+	}
 }

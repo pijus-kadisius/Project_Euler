@@ -87,7 +87,7 @@ public class MaximumPathSum1 {
 	public static int[][] readTriangle() throws IOException {
 		BufferedReader reader = new BufferedReader(
 				new FileReader(
-						"/home/pk/git_workspace/ProjectEuler/src/e018_maximumPathSum1/triangle.txt"));
+						"/home/pk/git/Project_Euler/src/e018_maximumPathSum1/triangle.txt"));
 
 		String in = "";
 		int[] temp;

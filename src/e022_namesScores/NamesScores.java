@@ -42,7 +42,7 @@ public class NamesScores {
 		ArrayList<String> al = new ArrayList<String>();
 		String[] a = null;
 		BufferedReader reader = new BufferedReader(new FileReader(
-				"/home/pk/git_workspace/ProjectEuler/src/e022_namesScores/"
+				"/home/pk/git/Project_Euler/src/e022_namesScores/"
 						+ fileName));
 		// if , or \n then move to next
 		while ((in = reader.readLine()) != null) {

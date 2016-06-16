@@ -12,36 +12,28 @@ package e009_specialPythagoreanTriplet;
 public class SpecialPythagoreanTriplet {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-		// initial values
-		int a = 0;
-		int b = 0;
-		int c = 0;
-
-		for (int i = 1; i < 1001; i++) {
-
-			for (int j = 1; j < 1001 - i; j++) {
-				if (a + b < 1000) {
-					if (i + j + (1000 - i - j) == 1000
-							&& (i * i) + (j * j) == (1000 - i - j)
-									* (1000 - i - j)) {
-						a = i;
-						b = j;
-						c = 1000 - a - b;
-					}
-				}
-
-			}
-		}
-		display(a, b, c);
+		int[] abc = findTriple();
+		display(abc);
 	}
 	
-	public static void display(int a, int b, int c)
+	public static int[] findTriple() {
+		int[] abc = {0,0,0};
+		
+		for(abc[0] = 1; abc[0]<1000; abc[0]++)
+			for(abc[1] = 1; abc[1]<1000; abc[1]++)
+				if( ((abc[0]*abc[0])+(abc[1]*abc[1])) == ((1000-abc[0]-abc[1])*(1000-abc[0]-abc[1])) ) {
+					abc[2] = 1000-abc[0]-abc[1];
+					return abc;
+				}	
+		
+		return abc;
+	}
+	
+	public static void display(int[] abc)
 	{
-		System.out.println("Pythagorean triplet of three natural numbers a<b<c, a^2+b^2=c^2 and a + b + c = 1000:\n\n"+"[ "+a+" "+b+" "+c+" ]"
-				+ "\n\n"+a+" + "+b+" + "+c+" = "+(a+b+c)+"\n\n"+(a*a)+" + "+(b*b)+" = "+(c*c)+"\n\n"+((a*a)+(b*b))+" = "+(c*c)+".\n\n"
-						+ "The product of a,b,c: "+(a*b*c)+".");
+		System.out.println("Pythagorean triplet of three natural numbers a<b<c, a^2+b^2=c^2 and a + b + c = 1000:\n\n"+"[ "+abc[0]+" "+abc[1]+" "+abc[2]+" ]"
+				+ "\n\n"+abc[0]+" + "+abc[1]+" + "+abc[2]+" = "+(abc[0]+abc[1]+abc[2])+"\n\n"+(abc[0]*abc[0])+" + "+(abc[1]*abc[1])+" = "+(abc[2]*abc[2])+"\n\n"+((abc[0]*abc[0])+(abc[1]*abc[1]))+" = "+(abc[2]*abc[2])+".\n\n"
+						+ "The product of a,b,c: "+(abc[0]*abc[1]*abc[2])+".");
 	}
 
 }
